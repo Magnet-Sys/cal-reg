@@ -6,8 +6,8 @@
 
     <BCollapse id="nav-collapse" v-model="navCollapseState" is-nav>
       <BNavbarNav @click="navCollapseState = false"> 
-        <BNavItem to="/">Cálculo de calificaciones</BNavItem>
-        <BNavItem to="/registro">Formulario de Registro</BNavItem>
+        <BNavItem to="/" active-class="text-success fw-bold">Cálculo de calificaciones</BNavItem>
+        <BNavItem to="/registro" active-class="text-success fw-bold">Formulario de Registro</BNavItem>
         <BNavItem href="#" disabled>En construcción</BNavItem>
       </BNavbarNav>
       
@@ -59,10 +59,6 @@
 </script>
 
 <style scoped>
-  .navbar-brand {
-    color: rgba(0, 0, 0, 0.9);
-  }
-
   .navbar-toggler {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 6px;

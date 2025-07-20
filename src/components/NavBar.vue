@@ -1,15 +1,15 @@
 <script setup>
-    import { 
-    BNavbar, 
-    BNavbarBrand, 
-    BNavbarToggle, 
-    BCollapse, 
-    BNavbarNav, 
-    BNavItem,
-    BNavForm, 
-    BFormInput, 
-    BButton 
-    } from 'bootstrap-vue-next'
+  import { 
+  BNavbar, 
+  BNavbarBrand, 
+  BNavbarToggle, 
+  BCollapse, 
+  BNavbarNav, 
+  BNavItem,
+  BNavForm, 
+  BFormInput, 
+  BButton 
+  } from 'bootstrap-vue-next'
 </script>
 
 <template>
@@ -39,13 +39,13 @@
 </template>
 
 <style scoped>
-    .router-link-exact-active {
-    font-weight: bold;
-    color: #1a8754 !important;
-    }
+  .router-link-exact-active {
+  font-weight: bold;
+  color: #1a8754 !important;
+  }
 
-    .navbar-brand {
-    color: rgba(0, 0, 0, 0.9) !important;
-    }
+  .navbar-brand {
+  color: rgba(0, 0, 0, 0.9) !important;
+  }
 </style>
 

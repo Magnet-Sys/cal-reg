@@ -1,14 +1,14 @@
 <script setup>
   import { 
-  BNavbar, 
-  BNavbarBrand, 
-  BNavbarToggle, 
-  BCollapse, 
-  BNavbarNav, 
-  BNavItem,
-  BNavForm, 
-  BFormInput, 
-  BButton 
+    BNavbar, 
+    BNavbarBrand, 
+    BNavbarToggle, 
+    BCollapse, 
+    BNavbarNav, 
+    BNavItem,
+    BNavForm, 
+    BFormInput, 
+    BButton 
   } from 'bootstrap-vue-next'
 </script>
 
@@ -40,12 +40,37 @@
 
 <style scoped>
   .router-link-exact-active {
-  font-weight: bold;
-  color: #1a8754 !important;
+    font-weight: bold;
+    color: #1a8754;
   }
 
   .navbar-brand {
-  color: rgba(0, 0, 0, 0.9) !important;
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 6px 8px;
+    transition: all 0.2s ease;
+    background-color: transparent;
+  }
+
+  .navbar-toggler:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.15);
+  }
+
+  .navbar-toggler:focus {
+    border-color: #1a8754;
+    box-shadow: 0 0 0 2px rgba(26, 135, 84, 0.25);
+    outline: none;
+  }
+
+  .navbar-toggler:active {
+    background-color: rgba(26, 135, 84, 0.1);
+    border-color: #1a8754;
+    transform: scale(0.98);
   }
 </style>
 

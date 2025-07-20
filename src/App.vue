@@ -1,85 +1,56 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+  import { 
+    BNavbar, 
+    BNavbarBrand, 
+    BNavbarToggle, 
+    BCollapse, 
+    BNavbarNav, 
+    BNavItem,
+    BNavForm, 
+    BFormInput, 
+    BButton 
+  } from 'bootstrap-vue-next'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div>
+    <BNavbar toggleable="lg" variant="light" class="border-bottom px-3">
+      <BNavbarBrand href="#">Programación Front End</BNavbarBrand>
+      
+      <BNavbarToggle target="nav-collapse" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <BCollapse id="nav-collapse" is-nav>
+        <BNavbarNav>
+          <router-link to="/" class="nav-link">Cálculo de calificaciones</router-link>
+          <router-link to="/registro" class="nav-link">Formulario de Registro</router-link>
+          <BNavItem href="#" disabled>En construcción</BNavItem>
+        </BNavbarNav>
+        
+        <BNavbarNav class="ms-auto mb-2 mb-lg-0">
+          <BNavForm @submit.prevent>
+            <BFormInput
+              class="me-2"
+              placeholder="Search"
+            />
+            <BButton variant="outline-success" type="submit">Búsqueda</BButton>
+          </BNavForm>
+        </BNavbarNav>
+      </BCollapse>
+    </BNavbar>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+    <main class="container my-5">
+      <router-view />
+    </main>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+<style>
+  .router-link-exact-active {
+    font-weight: bold;
+    color: #1a8754 !important;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  .navbar-brand {
+    color: rgba(0, 0, 0, 0.9) !important;
   }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>

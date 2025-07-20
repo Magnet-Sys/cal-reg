@@ -1,20 +1,3 @@
-<script setup>
-  import { ref } from 'vue'
-  import { 
-    BNavbar, 
-    BNavbarBrand, 
-    BNavbarToggle, 
-    BCollapse, 
-    BNavbarNav, 
-    BNavItem,
-    BNavForm, 
-    BFormInput, 
-    BButton 
-  } from 'bootstrap-vue-next'
-  
-  const navCollapseState = ref(false) 
-</script>
-
 <template>
   <BNavbar toggleable="lg" variant="light" class="border-bottom px-3">
     <BNavbarBrand href="#">Programación Front End</BNavbarBrand>
@@ -41,7 +24,41 @@
   </BNavbar>
 </template>
 
-<style scoped>  
+<script>
+  import { 
+    BNavbar, 
+    BNavbarBrand, 
+    BNavbarToggle, 
+    BCollapse, 
+    BNavbarNav, 
+    BNavItem,
+    BNavForm, 
+    BFormInput, 
+    BButton 
+  } from 'bootstrap-vue-next'
+
+  export default {
+    name: 'AppNavbar',
+    components: {
+      BNavbar, 
+      BNavbarBrand, 
+      BNavbarToggle, 
+      BCollapse, 
+      BNavbarNav, 
+      BNavItem,
+      BNavForm, 
+      BFormInput, 
+      BButton
+    },
+    data() {
+      return {
+        navCollapseState: false 
+      }
+    }
+  }
+</script>
+
+<style scoped>
   .navbar-brand {
     color: rgba(0, 0, 0, 0.9);
   }
@@ -53,14 +70,17 @@
     transition: all 0.2s ease;
     background-color: transparent;
   }
+
   .navbar-toggler:hover {
     background-color: rgba(0, 0, 0, 0.05);
     border-color: rgba(0, 0, 0, 0.15);
   }
+
   .navbar-toggler:focus {
     box-shadow: 0 0 0 2px rgba(46, 46, 46, 0.25);
     outline: none;
   }
+
   .navbar-toggler:active {
     box-shadow: 0 0 0 2px rgba(46, 46, 46, 0.25);
     transform: scale(0.98);

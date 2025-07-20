@@ -58,8 +58,8 @@
           />
         </BFormGroup>
 
-        <div class="d-grid">
-          <BButton type="submit" variant="primary">Calcular</BButton>
+        <div class="d-flex justify-content-center">
+          <BButton type="submit" variant="primary" class="btn">Calcular</BButton>
         </div>
       </form>
 
@@ -158,3 +158,10 @@
     },
   };
 </script>
+
+<style scoped>
+  .btn {
+    width: 100px;
+    margin-bottom: 2rem;
+  }
+</style>

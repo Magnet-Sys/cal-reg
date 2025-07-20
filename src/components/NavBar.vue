@@ -1,4 +1,5 @@
 <script setup>
+  import { ref } from 'vue'
   import { 
     BNavbar, 
     BNavbarBrand, 
@@ -10,6 +11,8 @@
     BFormInput, 
     BButton 
   } from 'bootstrap-vue-next'
+  
+  const navCollapseState = ref(false) 
 </script>
 
 <template>
@@ -18,10 +21,10 @@
     
     <BNavbarToggle target="nav-collapse" />
 
-    <BCollapse id="nav-collapse" is-nav>
-      <BNavbarNav>
-        <router-link to="/" class="nav-link">Cálculo de calificaciones</router-link>
-        <router-link to="/registro" class="nav-link">Formulario de Registro</router-link>
+    <BCollapse id="nav-collapse" v-model="navCollapseState" is-nav>
+      <BNavbarNav @click="navCollapseState = false"> 
+        <BNavItem to="/">Cálculo de calificaciones</BNavItem>
+        <BNavItem to="/registro">Formulario de Registro</BNavItem>
         <BNavItem href="#" disabled>En construcción</BNavItem>
       </BNavbarNav>
       
@@ -38,12 +41,7 @@
   </BNavbar>
 </template>
 
-<style scoped>
-  .router-link-exact-active {
-    font-weight: bold;
-    color: #1a8754;
-  }
-
+<style scoped>  
   .navbar-brand {
     color: rgba(0, 0, 0, 0.9);
   }
@@ -55,22 +53,16 @@
     transition: all 0.2s ease;
     background-color: transparent;
   }
-
   .navbar-toggler:hover {
     background-color: rgba(0, 0, 0, 0.05);
     border-color: rgba(0, 0, 0, 0.15);
   }
-
   .navbar-toggler:focus {
-    border-color: #1a8754;
-    box-shadow: 0 0 0 2px rgba(26, 135, 84, 0.25);
+    box-shadow: 0 0 0 2px rgba(46, 46, 46, 0.25);
     outline: none;
   }
-
   .navbar-toggler:active {
-    background-color: rgba(26, 135, 84, 0.1);
-    border-color: #1a8754;
+    box-shadow: 0 0 0 2px rgba(46, 46, 46, 0.25);
     transform: scale(0.98);
   }
 </style>
-
